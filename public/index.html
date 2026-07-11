@@ -118,7 +118,7 @@
       <a href="/about.html">About</a>
       <a href="/speaking.html">Speaking</a>
       <a href="/consulting.html">Consulting</a>
-                <a href="/newsletter">Newsletter</a>
+      <a href="/newsletter">Newsletter</a>
       <a class="nav-cta" href="#contact">Contact</a>
     </nav>
   </div>
@@ -339,6 +339,36 @@
       msg.className = 'form-note signup-msg err';
     }
   });
+})();
+</script>
+
+<script>
+/* Latest from the newsletter — pulls the most recent issue from /newsletter and
+   inserts a teaser card into "Where to find me". Auto-updates as issues publish. */
+(function(){
+  var grid = document.querySelector('#watch .grid');
+  if(!grid) return;
+  fetch('/newsletter').then(function(r){ return r.ok ? r.text() : null; }).then(function(html){
+    if(!html) return;
+    var doc = new DOMParser().parseFromString(html, 'text/html');
+    var a = doc.querySelector('.archive a[href*="/newsletter/2"]');
+    if(!a) return;
+    var li = a.closest('li');
+    var summary = '';
+    if(li){ var s = li.querySelector('.sum'); if(s){ summary = (s.textContent || '').trim(); } }
+    var card = document.createElement('a');
+    card.className = 'card signup-card';
+    card.href = a.getAttribute('href');
+    var h = document.createElement('h3');
+    h.textContent = 'Latest from the newsletter';
+    var p = document.createElement('p');
+    p.textContent = summary || (a.textContent || '').trim();
+    var go = document.createElement('span');
+    go.className = 'go';
+    go.textContent = 'Read today’s issue →';
+    card.appendChild(h); card.appendChild(p); card.appendChild(go);
+    grid.appendChild(card);
+  }).catch(function(){});
 })();
 </script>
 
