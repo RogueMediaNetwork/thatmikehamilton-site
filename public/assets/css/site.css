@@ -181,3 +181,5 @@ a.card:hover{text-decoration:none;transform:translateY(-2px);transition:.15s}
 @media(max-width:560px){
   .nav nav a:not(.nav-cta){display:none}
 }
+
+@media(max-width:560px){.nav .wrap{flex-wrap:wrap;height:auto;padding:10px 20px;gap:8px 14px}.nav nav{width:100%;margin-left:0;gap:12px 16px;justify-content:flex-start}.nav nav a:not(.nav-cta){display:inline-block;font-size:.95rem}.nav-cta{margin-left:auto}}
