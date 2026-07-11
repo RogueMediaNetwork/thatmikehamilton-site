@@ -156,19 +156,6 @@
           <p>The YouTube channel. A new long-form video every week &mdash; one real tool, one real lesson, no 20-year-old talking heads.</p>
           <span class="go">Watch on YouTube &rarr;</span>
         </a>
-        <div class="card signup-card" id="newsletter">
-          <h3>The Newsletter</h3>
-          <p>Field notes on AI, tools, and the creator business &mdash; written plain and delivered to your inbox <strong>every weekday morning</strong>.</p>
-          <form class="signup" method="post" action="https://seasoned-tech-newsletter.mike-663.workers.dev/api/subscribe" novalidate>
-            <label class="sr-only" for="nl-email">Email address</label>
-            <div class="signup-row">
-              <input id="nl-email" name="email" type="email" inputmode="email" autocomplete="email"
-                     placeholder="you@email.com" required>
-              <button class="btn btn-primary" type="submit">Sign up free</button>
-            </div>
-            <p class="form-note signup-msg" role="status" aria-live="polite">Free. Every weekday. Unsubscribe anytime.</p>
-          </form>
-        </div>
         <a class="card" href="https://roguemedianetwork.com/">
           <h3>Rogue Media Network</h3>
           <p>The network behind it all &mdash; 200+ shows across all genres.</p>
@@ -179,6 +166,21 @@
           <p>Speaking, consulting, and building AI workflows for real businesses. If you've got something in mind, let's talk.</p>
           <span class="go">Get in touch &rarr;</span>
         </a>
+      </div>
+
+      <div class="card signup-card" id="newsletter" style="margin-top:18px">
+        <h3>The Newsletter</h3>
+        <p>Field notes on AI, tools, and the creator business &mdash; written plain and delivered to your inbox <strong>every weekday morning</strong>. No hype.</p>
+        <form class="signup" method="post" action="https://seasoned-tech-newsletter.mike-663.workers.dev/api/subscribe" novalidate>
+          <label class="sr-only" for="nl-email">Email address</label>
+          <div class="signup-row">
+            <input id="nl-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
+            <button class="btn btn-primary" type="submit">Sign up free</button>
+          </div>
+          <p class="form-note signup-msg" role="status" aria-live="polite">Free. Every weekday. Unsubscribe anytime.</p>
+        </form>
+        <p class="latest-issue" style="margin:14px 0 0"></p>
+        <p style="margin:8px 0 0"><a class="go" href="/newsletter">Browse all past issues &rarr;</a></p>
       </div>
     </div>
   </section>
@@ -343,31 +345,21 @@
 </script>
 
 <script>
-/* Latest from the newsletter — pulls the most recent issue from /newsletter and
-   inserts a teaser card into "Where to find me". Auto-updates as issues publish. */
+/* Latest issue — pulls the most recent issue from /newsletter and fills the
+   "Latest issue" line inside the Newsletter block. Auto-updates as issues publish. */
 (function(){
-  var grid = document.querySelector('#watch .grid');
-  if(!grid) return;
+  var slot = document.querySelector('.latest-issue');
+  if(!slot) return;
   fetch('/newsletter').then(function(r){ return r.ok ? r.text() : null; }).then(function(html){
     if(!html) return;
     var doc = new DOMParser().parseFromString(html, 'text/html');
     var a = doc.querySelector('.archive a[href*="/newsletter/2"]');
     if(!a) return;
-    var li = a.closest('li');
-    var summary = '';
-    if(li){ var s = li.querySelector('.sum'); if(s){ summary = (s.textContent || '').trim(); } }
-    var card = document.createElement('a');
-    card.className = 'card signup-card';
-    card.href = a.getAttribute('href');
-    var h = document.createElement('h3');
-    h.textContent = 'Latest from the newsletter';
-    var p = document.createElement('p');
-    p.textContent = summary || (a.textContent || '').trim();
-    var go = document.createElement('span');
-    go.className = 'go';
-    go.textContent = 'Read today’s issue →';
-    card.appendChild(h); card.appendChild(p); card.appendChild(go);
-    grid.appendChild(card);
+    var link = document.createElement('a');
+    link.className = 'go';
+    link.href = a.getAttribute('href');
+    link.textContent = 'Latest issue: ' + (a.textContent || '').trim() + ' →';
+    slot.appendChild(link);
   }).catch(function(){});
 })();
 </script>
