@@ -33,6 +33,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bitter:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css">
 <script src="/assets/js/nav.js" defer></script>
+<script src="/assets/js/books.js" defer></script>
 
 <!-- Structured data: identity + entity disambiguation ----------------------->
 <script type="application/ld+json">
@@ -72,7 +73,7 @@
       "knowsAbout":["Artificial Intelligence","Creator Economy","Media Production","AI Workflows","Podcasting","Content Technology"],
       "sameAs":[
         "https://www.youtube.com/@thatmikehamilton",
-        "https://www.linkedin.com/in/michael-hamilton-b46bab60/",
+        "https://www.linkedin.com/in/mike-hamilton-89b9a7349/",
         "https://www.facebook.com/mikeh222x"
       ]
     },
@@ -128,17 +129,18 @@
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/assets/tmh-mark.png" alt="" width="30" height="30">That Mike Hamilton</a>
+    <a class="brand" href="https://thatmikehamilton.com/"><img src="https://thatmikehamilton.com/assets/tmh-mark.png" alt="" width="30" height="30">That Mike Hamilton</a>
     <nav aria-label="Primary">
-      <a href="#watch">Watch</a>
-      <a href="#built">Built</a>
-      <a href="/about.html">About</a>
-      <a href="/speaking.html">Speaking</a>
-      <a href="/consulting.html">Consulting</a>
-      <a href="/answers/">Guides</a>
-      <a href="/workbook">Workbook</a>
-      <a href="/newsletter">Newsletter</a>
-      <a class="nav-cta" href="#contact">Contact</a>
+      <a href="https://thatmikehamilton.com/#watch">Watch</a>
+      <a href="https://thatmikehamilton.com/#built">Built</a>
+      <a href="https://thatmikehamilton.com/about.html">About</a>
+      <a href="https://thatmikehamilton.com/speaking.html">Speaking</a>
+      <a href="https://thatmikehamilton.com/consulting.html">Consulting</a>
+      <a href="https://thatmikehamilton.com/answers/">Guides</a>
+      <a href="https://thatmikehamilton.com/books.html">Bookshelf</a>
+      <a href="https://thatmikehamilton.com/workbook">Workbook</a>
+      <a href="https://thatmikehamilton.com/#newsletter">Newsletter</a>
+      <a class="nav-cta" href="https://thatmikehamilton.com/#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -153,11 +155,78 @@
            width="1120" height="360">
       <p class="tag">No hype &middot; Real tradeoffs</p>
       <h1>AI and Tech for People Who Remember Dial-Up</h1>
-      <p class="big">I run a media company, I'm 50+, and I use AI every day to do it. This is where I explain the tools, the workflows, and the truth &mdash; for people who weren't born holding a smartphone.</p>
-      <p class="byline">with Mike Hamilton &mdash; Waco, Texas</p>
-      <p>
-        <a class="btn btn-primary" href="/workbook">Get the free workbook</a>
-        <a class="btn btn-ghost" href="/about.html">Read Mike's story</a>
+      <div class="hero-support">
+        <div>
+          <p class="big">I run a media company, I'm 50+, and I use AI every day to do it. This is where I explain the tools, the workflows, and the truth &mdash; for people who weren't born holding a smartphone.</p>
+          <p class="byline">with Mike Hamilton &mdash; Waco, Texas</p>
+          <p>
+            <a class="btn btn-primary" href="/workbook">Get the free workbook</a>
+            <a class="btn btn-ghost" href="/about.html">Read Mike's story</a>
+          </p>
+        </div>
+        <aside class="hero-book-callout" aria-label="Make the Show by Mike Hamilton">
+          <span class="eyebrow">The book</span>
+          <a class="book-cover-link" href="https://www.amazon.com/s?k=9798905996269&amp;i=stripbooks" target="_blank" rel="noopener noreferrer" aria-label="Find Make the Show by Mike Hamilton on Amazon">
+            <img src="/assets/make-the-show-book-cover.webp" alt="Cover of Make the Show by Mike Hamilton" width="640" height="960">
+            <span>Find <em>Make the Show</em> on Amazon &rarr;</span>
+          </a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- NEWSLETTER BANNER ----------------------------------------------------->
+  <section class="newsletter-band" id="newsletter">
+    <div class="wrap">
+      <div class="newsletter-banner">
+        <div class="newsletter-copy">
+          <span class="eyebrow">The weekday briefing</span>
+          <h2>Useful AI news, minus the jargon fog</h2>
+          <p>Field notes on AI, tools, and the creator business &mdash; written plain and delivered every weekday morning.</p>
+          <p class="latest-issue"></p>
+        </div>
+        <form class="signup newsletter-form" method="post" action="https://seasoned-tech-newsletter.mike-663.workers.dev/api/subscribe" novalidate>
+          <label for="nl-email-top">Email address</label>
+          <div class="signup-row">
+            <input id="nl-email-top" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
+            <button class="btn btn-primary" type="submit">Sign up free</button>
+          </div>
+          <p class="form-note signup-msg" role="status" aria-live="polite">Free. Every weekday. Unsubscribe anytime.</p>
+          <p class="newsletter-archive"><a class="go" href="#newsletter-bottom">Prefer the form at the bottom? Jump there &rarr;</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- DRAW IT FIRST ---------------------------------------------------------->
+  <section id="draw-it-first" class="draw-first-home">
+    <div class="wrap">
+      <span class="eyebrow">A Mike Hamilton system</span>
+      <h2>Before you prompt it, build it, or automate it&mdash;Draw It First.</h2>
+      <p class="lead" style="max-width:72ch">Draw It First is a practical, human-first way to get an idea out of your head, see the whole system clearly, and give AI the context it needs to do genuinely useful work.</p>
+
+      <div class="grid grid-3" style="margin-top:26px">
+        <div class="card">
+          <h3>See the whole problem</h3>
+          <p>Turn a fuzzy idea into a simple visual map of the people, decisions, steps, and outcomes that matter.</p>
+        </div>
+        <div class="card">
+          <h3>Give AI better context</h3>
+          <p>Use the map to explain what is true, what you need, and what the technology must not misunderstand.</p>
+        </div>
+        <div class="card">
+          <h3>Build the right thing</h3>
+          <p>Test the thinking before spending time, money, or energy on the wrong workflow, product, show, or automation.</p>
+        </div>
+      </div>
+
+      <p style="margin-top:26px">
+        <a class="btn btn-primary" href="https://drawitfirst.com/">Explore Draw It First</a>
+        <a class="btn btn-ghost" href="/consulting.html">Bring it to your organization</a>
       </p>
     </div>
   </section>
@@ -169,13 +238,26 @@
     <div class="wrap">
       <span class="eyebrow">Where to find me</span>
       <h2>Start with the work</h2>
+
+      <div class="latest-video" style="margin-top:26px">
+        <div class="video-copy">
+          <span class="eyebrow">Newest on YouTube</span>
+          <h3>The latest from Seasoned.Tech</h3>
+          <p>The player always starts with the newest public video from <strong>@thatmikehamilton</strong>, so this spot updates as soon as a new episode is published.</p>
+          <a class="btn btn-ghost" href="https://www.youtube.com/@thatmikehamilton/videos" rel="me">See every video &rarr;</a>
+        </div>
+        <div class="video-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=UU7Q71icgHuM7Q3oRjLe7NNA&amp;rel=0" title="Newest Seasoned.Tech video from That Mike Hamilton" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+
       <div class="grid grid-3" style="margin-top:26px">
         <a class="card" href="https://www.youtube.com/@thatmikehamilton" rel="me">
           <h3>Seasoned.Tech &mdash; YouTube</h3>
-          <p>The YouTube channel. A new long-form video every week &mdash; one real tool, one real lesson, no 20-year-old talking heads.</p>
+          <p>The YouTube show. One major technology shift each week, traced into the work, money, institutions, and communities it changes.</p>
           <span class="go">Watch on YouTube &rarr;</span>
         </a>
-        <a class="card" href="/workbook">
+        <a class="card" id="workbook" href="/workbook">
           <h3>Make the Show Workbook</h3>
           <p>The free companion workbook for planning, launching and improving your show. Includes 39 worksheets, 13 templates and a Simple Show Bible Starter.</p>
           <span class="go">Get the workbook &rarr;</span>
@@ -186,21 +268,25 @@
           <span class="go">Get in touch &rarr;</span>
         </a>
       </div>
+    </div>
+  </section>
 
-      <div class="card signup-card" id="newsletter" style="margin-top:18px">
-        <h3>The Newsletter</h3>
-        <p>Field notes on AI, tools, and the creator business &mdash; written plain and delivered to your inbox <strong>every weekday morning</strong>. No hype.</p>
-        <form class="signup" method="post" action="https://seasoned-tech-newsletter.mike-663.workers.dev/api/subscribe" novalidate>
-          <label class="sr-only" for="nl-email">Email address</label>
-          <div class="signup-row">
-            <input id="nl-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
-            <button class="btn btn-primary" type="submit">Sign up free</button>
-          </div>
-          <p class="form-note signup-msg" role="status" aria-live="polite">Free. Every weekday. Unsubscribe anytime.</p>
-        </form>
-        <p class="latest-issue" style="margin:14px 0 0"></p>
-        <p style="margin:8px 0 0"><a class="go" href="/newsletter">Browse all past issues &rarr;</a></p>
+  <hr>
+
+  <!-- BOOKS ----------------------------------------------------------------->
+  <section class="books-home" aria-labelledby="books-home-title">
+    <div class="wrap">
+      <div class="books-home-head">
+        <div>
+          <span class="eyebrow">Books by Mike</span>
+          <h2 id="books-home-title">The working bookshelf</h2>
+        </div>
+        <p>Practical AI field guides, creator playbooks, and technology histories written for people who want the whole story without the hype.</p>
       </div>
+      <div data-bookshelf="featured">
+        <p class="books-loading">Loading the bookshelf&hellip;</p>
+      </div>
+      <p class="books-home-action"><a class="btn btn-ghost" href="/books.html">See the full bookshelf &rarr;</a></p>
     </div>
   </section>
 
@@ -214,7 +300,7 @@
         <div class="prose" style="max-width:none">
           <span class="eyebrow">The seasoned take</span>
           <h2>AI and tech for people who remember dial-up</h2>
-          <p>After decades in media &mdash; and 200+ shows currently keeping me up at night &mdash; I started doing one thing in public: explaining AI and the tools of the creator business honestly, to people who weren't born holding a smartphone.</p>
+          <p>After decades in media &mdash; and 200+ shows currently keeping me up at night &mdash; I started doing one thing in public: translating major technology changes into the real-world consequences and practical choices that matter.</p>
           <p>No hype, no doom. Just what actually works, what it costs, and where it lets me down &mdash; because everything has a catch, and I'll always name it.</p>
           <p class="callout">You're not too late. And your experience isn't a liability &mdash; it's the whole advantage.</p>
           <p style="margin-top:1.2em"><a class="btn btn-ghost" href="/about.html">Read the full story &rarr;</a></p>
@@ -298,8 +384,38 @@
         <h3>How often does the newsletter go out, and is it free?</h3>
         <p>Every weekday morning, and yes &mdash; it's free. Field notes on AI, tools, and the creator business, written plain and sent to your inbox. Unsubscribe anytime.</p>
         <h3>Can I hire Mike to speak or consult?</h3>
-        <p>Yes. Mike speaks on AI for everyday people and businesses, and consults on building real AI workflows. See <a href="/speaking.html">Speaking</a> and <a href="/consulting.html">Consulting</a>, or use the contact form below.</p>
+        <p>Yes. Mike speaks to experienced professionals, businesses, and organizations about using AI without surrendering human judgment, and consults on building real AI workflows. See <a href="/speaking.html">Speaking</a> and <a href="/consulting.html">Consulting</a>, or use the contact form below.</p>
         <p style="margin-top:1.2em"><a class="btn btn-ghost" href="/answers/">More plain-English AI guides &rarr;</a></p>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- LISTEN + REPEAT NEWSLETTER ASK --------------------------------------->
+  <section class="listen" id="listen">
+    <div class="wrap">
+      <span class="eyebrow">Listen</span>
+      <h2>Pick an episode and press play</h2>
+      <p class="lead listen-intro">Browse the playlist without leaving the page.</p>
+      <div class="podcast-player">
+        <iframe src="https://art19.com/shows/52a4888f-53ae-4dfd-a228-3aa3e56fde85/embed?theme=dark-orange&amp;playlist_type=playlist" title="That Mike Hamilton podcast playlist" loading="lazy" scrolling="no" sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"></iframe>
+      </div>
+
+      <div class="newsletter-banner newsletter-banner-bottom" id="newsletter-bottom">
+        <div class="newsletter-copy">
+          <span class="eyebrow">Don&rsquo;t miss the next one</span>
+          <h2>Get Seasoned.Tech in your inbox</h2>
+          <p>One useful weekday email for people who want the signal, the catch, and something practical to do next.</p>
+        </div>
+        <form class="signup newsletter-form" method="post" action="https://seasoned-tech-newsletter.mike-663.workers.dev/api/subscribe" novalidate>
+          <label for="nl-email-bottom">Email address</label>
+          <div class="signup-row">
+            <input id="nl-email-bottom" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
+            <button class="btn btn-primary" type="submit">Send me the newsletter</button>
+          </div>
+          <p class="form-note signup-msg" role="status" aria-live="polite">Free. Every weekday. Unsubscribe anytime.</p>
+        </form>
       </div>
     </div>
   </section>
@@ -309,35 +425,38 @@
   <!-- CONTACT --------------------------------------------------------------->
   <section id="contact">
     <div class="wrap">
-      <span class="eyebrow">Say hello</span>
-      <h2>Let's talk</h2>
-      <p class="lead" style="max-width:56ch">Speaking, consulting, collaborations, or just to tell me which tool to cover next. The inbox is open.</p>
+      <div class="contact-copy">
+        <span class="eyebrow">Say hello</span>
+        <h2>Let's talk</h2>
+        <p class="lead">Speaking, consulting, collaborations, or just to tell me which tool to cover next. The inbox is open.</p>
 
-      <form class="form-grid" method="post" action="/api/contact" style="margin-top:24px">
-        <div>
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" autocomplete="name" required>
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required>
-        </div>
-        <div>
-          <label for="subject">Subject</label>
-          <input id="subject" name="subject" type="text">
-        </div>
-        <div>
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" maxlength="1000" required></textarea>
-        </div>
-        <div>
-          <button class="btn btn-primary" type="submit">Send message</button>
-          <p class="form-note">
-            Your details are used only to reply to you &mdash; never sold, never added to a list without asking.
-            See the <a href="/privacy.html">Privacy Policy</a> for how contact-form data is handled.
-          </p>
-        </div>
-      </form>
+        <form class="form-grid" method="post" action="/api/contact">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div>
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text">
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" maxlength="1000" required></textarea>
+          </div>
+          <div>
+            <button class="btn btn-primary" type="submit">Send message</button>
+            <p class="form-note">
+              Your details are used only to reply to you &mdash; never sold, never added to a list without asking.
+              See the <a href="/privacy.html">Privacy Policy</a> for how contact-form data is handled.
+            </p>
+          </div>
+        </form>
+      </div>
+
     </div>
   </section>
 
@@ -347,39 +466,39 @@
 /* Newsletter signup — posts to /api/subscribe and shows inline feedback.
    Falls back gracefully if the endpoint isn't wired up yet. */
 (function(){
-  var form = document.querySelector('#newsletter .signup');
-  if(!form) return;
-  var msg = form.querySelector('.signup-msg');
-  var input = form.querySelector('input[name="email"]');
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    var email = (input.value || '').trim();
-    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
-      msg.textContent = 'Please enter a valid email address.';
-      msg.className = 'form-note signup-msg err';
-      input.focus();
-      return;
-    }
-    msg.textContent = 'Signing you up…';
-    msg.className = 'form-note signup-msg';
-    try{
-      var res = await fetch('https://seasoned-tech-newsletter.mike-663.workers.dev/api/subscribe', {
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({ email: email })
-      });
-      if(res.ok){
-        form.reset();
-        msg.textContent = "You're in. Check your inbox — first issue lands the next weekday morning.";
-        msg.className = 'form-note signup-msg ok';
-      } else {
-        msg.textContent = "Hmm, that didn't go through. Please try again in a moment.";
+  document.querySelectorAll('.signup').forEach(function(form){
+    var msg = form.querySelector('.signup-msg');
+    var input = form.querySelector('input[name="email"]');
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      var email = (input.value || '').trim();
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+        msg.textContent = 'Please enter a valid email address.';
+        msg.className = 'form-note signup-msg err';
+        input.focus();
+        return;
+      }
+      msg.textContent = 'Signing you up…';
+      msg.className = 'form-note signup-msg';
+      try{
+        var res = await fetch('https://seasoned-tech-newsletter.mike-663.workers.dev/api/subscribe', {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({ email: email })
+        });
+        if(res.ok){
+          form.reset();
+          msg.textContent = "You're in. Check your inbox — first issue lands the next weekday morning.";
+          msg.className = 'form-note signup-msg ok';
+        } else {
+          msg.textContent = "Hmm, that didn't go through. Please try again in a moment.";
+          msg.className = 'form-note signup-msg err';
+        }
+      }catch(err){
+        msg.textContent = "Couldn't reach the server. Please try again shortly.";
         msg.className = 'form-note signup-msg err';
       }
-    }catch(err){
-      msg.textContent = "Couldn't reach the server. Please try again shortly.";
-      msg.className = 'form-note signup-msg err';
-    }
+    });
   });
 })();
 </script>
@@ -388,8 +507,8 @@
 /* Latest issue — pulls the most recent issue from /newsletter and fills the
    "Latest issue" line inside the Newsletter block. Auto-updates as issues publish. */
 (function(){
-  var slot = document.querySelector('.latest-issue');
-  if(!slot) return;
+    var slots = document.querySelectorAll('.latest-issue');
+    if(!slots.length) return;
   fetch('/newsletter').then(function(r){ return r.ok ? r.text() : null; }).then(function(html){
     if(!html) return;
     var doc = new DOMParser().parseFromString(html, 'text/html');
@@ -399,22 +518,23 @@
     link.className = 'go';
     link.href = a.getAttribute('href');
     link.textContent = 'Latest issue: ' + (a.textContent || '').trim() + ' →';
-    slot.appendChild(link);
+    slots.forEach(function(slot){ slot.appendChild(link.cloneNode(true)); });
   }).catch(function(){});
 })();
 </script>
 
 <footer class="foot">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/assets/tmh-mark.png" alt="" width="26" height="26">That Mike Hamilton</a>
+    <a class="brand" href="https://thatmikehamilton.com/"><img src="https://thatmikehamilton.com/assets/tmh-mark.png" alt="" width="26" height="26">That Mike Hamilton</a>
     <div class="social">
       <a href="https://www.youtube.com/@thatmikehamilton" rel="me">YouTube</a>
       <a href="https://www.facebook.com/mikeh222x" rel="me">Facebook</a>
-      <a href="https://www.linkedin.com/in/michael-hamilton-b46bab60/" rel="me">LinkedIn</a>
-      <a href="/answers/">Guides</a>
-      <a href="/newsletter">Newsletter</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
+      <a href="https://www.linkedin.com/in/mike-hamilton-89b9a7349/" rel="me">LinkedIn</a>
+      <a href="https://thatmikehamilton.com/answers/">Guides</a>
+      <a href="https://thatmikehamilton.com/books.html">Bookshelf</a>
+      <a href="https://thatmikehamilton.com/#newsletter">Newsletter</a>
+      <a href="https://thatmikehamilton.com/privacy.html">Privacy</a>
+      <a href="https://thatmikehamilton.com/terms.html">Terms</a>
     </div>
     <small>&copy; 2026 &middot; Waco, TX &middot; Seasoned.Tech</small>
   </div>
