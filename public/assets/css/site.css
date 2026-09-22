@@ -208,7 +208,9 @@ a.card:hover{text-decoration:none;transform:translateY(-2px);transition:.15s}
   .grid-2,.grid-3{grid-template-columns:1fr}
   section{padding:48px 0}
 }
-@media(max-width:1080px){
+/* The full desktop navigation needs more room than a typical laptop provides.
+   Switch to the menu before it can collide with the brand or run off-screen. */
+@media(max-width:1450px){
   .nav.nav-ready .nav-toggle{display:inline-flex}
   .nav.nav-ready nav{
     display:none;position:absolute;top:100%;left:0;right:0;margin:0;

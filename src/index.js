@@ -1,6 +1,8 @@
 const BOOK_ASSET_PREFIX = "/assets/books/";
 const FALLBACK_COVER = "/assets/books/cover-unavailable.svg";
+const FALLBACK_ASSET = "/assets/asset-unavailable.svg";
 const HEALTH_PATH = "/__site-health";
+const IMAGE_ASSET = /\.(?:avif|gif|jpe?g|png|svg|webp)$/i;
 
 export default {
   async fetch(request, env, ctx) {
@@ -10,9 +12,13 @@ export default {
     }
 
     const response = await env.ASSETS.fetch(request);
-    if (url.pathname.startsWith(BOOK_ASSET_PREFIX) && response.status === 404) {
+    if (IMAGE_ASSET.test(url.pathname) && url.pathname.startsWith("/assets/") && response.status === 404) {
       ctx.waitUntil(logFallback(url.pathname));
-      return env.ASSETS.fetch(new Request(new URL(FALLBACK_COVER, url), request));
+      const fallbackPath = url.pathname.startsWith(BOOK_ASSET_PREFIX) ? FALLBACK_COVER : FALLBACK_ASSET;
+      const fallback = await env.ASSETS.fetch(new Request(new URL(fallbackPath, url), request));
+      const headers = new Headers(fallback.headers);
+      headers.set("x-tmh-fallback", fallbackPath);
+      return new Response(fallback.body, { status: fallback.status, headers });
     }
     return response;
   },

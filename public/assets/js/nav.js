@@ -50,6 +50,6 @@
   });
 
   window.addEventListener('resize', function () {
-    if (window.innerWidth > 1080) closeMenu(false);
+    if (window.innerWidth > 1450) closeMenu(false);
   });
 })();

@@ -17,15 +17,9 @@ jobs:
   check-book-covers:
     runs-on: ubuntu-latest
     steps:
-      - name: Check the live bookshelf
-        id: health
-        shell: bash
-        run: |
-          set -o pipefail
-          report="$(curl --fail-with-body --retry 3 --retry-all-errors --connect-timeout 15 --max-time 45 --silent --show-error 'https://thatmikehamilton.com/__site-health')"
-          printf '%s\n' "$report"
-          printf 'report<<EOF\n%s\nEOF\n' "$report" >> "$GITHUB_OUTPUT"
-          echo "$report" | jq -e '.ok == true and .coversChecked >= 6'
+      - uses: actions/checkout@v4
+      - name: Check every public page and local site asset
+        run: node scripts/verify-live-site-assets.mjs
 
       - name: Open a repair alert if the check fails
         if: failure()
@@ -35,12 +29,12 @@ jobs:
             const title = 'Website book-cover health check needs attention';
             const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
             const body = [
-              'The automated check could not confirm that all six book covers are healthy.',
+              'The automated check found a missing page or local site asset.',
               '',
-              'The Cloudflare worker is still serving the branded fallback cover in place of any missing book image, so visitors will not see a broken-image icon.',
+              'The Cloudflare worker is serving a branded fallback in place of any missing image, so visitors will not see a broken-image icon.',
               '',
               `Inspect the run: ${runUrl}`,
-              'Then restore the missing source asset in `public/assets/books/` and deploy from GitHub.'
+              'Then restore the missing source asset in `public/assets/` and deploy from GitHub.'
             ].join('\n');
             const { data: issues } = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
