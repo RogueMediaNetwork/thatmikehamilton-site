@@ -1,4 +1,4 @@
-name: Website book-cover health
+name: Website asset health
 
 on:
   schedule:
