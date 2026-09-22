@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" role="img" aria-labelledby="title desc">
+  <title id="title">That Mike Hamilton book cover</title>
+  <desc id="desc">A temporary cover placeholder for a Mike Hamilton book.</desc>
+  <rect width="600" height="900" fill="#1B344E"/>
+  <rect x="34" y="34" width="532" height="832" fill="none" stroke="#CE6115" stroke-width="12"/>
+  <text x="72" y="170" fill="#F1E7D5" font-family="Arial Narrow, Arial, sans-serif" font-size="56" font-weight="900">THAT MIKE</text>
+  <text x="72" y="235" fill="#F1E7D5" font-family="Arial Narrow, Arial, sans-serif" font-size="56" font-weight="900">HAMILTON</text>
+  <path d="M72 300H528" stroke="#CE6115" stroke-width="12"/>
+  <text x="72" y="400" fill="#F1E7D5" font-family="Georgia, serif" font-size="38">Book cover</text>
+  <text x="72" y="450" fill="#F1E7D5" font-family="Georgia, serif" font-size="38">refreshing</text>
+  <text x="72" y="500" fill="#F1E7D5" font-family="Georgia, serif" font-size="38">automatically</text>
+  <text x="72" y="790" fill="#CE6115" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4">SEASONED.TECH</text>
+</svg>
